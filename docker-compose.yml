@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: taxi_dw_postgres
+    environment:
+      POSTGRES_USER: taxi
+      POSTGRES_PASSWORD: taxi
+      POSTGRES_DB: taxi_dw
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
